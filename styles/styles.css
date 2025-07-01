@@ -1,7 +1,27 @@
-/* Базові стилі */
+:root {
+    --color-bg-gradient-start: #f8f6f3;
+    --color-bg-gradient-mid: #f6ede9;
+    --color-bg-gradient-end: #f3e3d3;
+    --color-bg-white: #fffdfb;
+    --color-accent: #eab89a;
+    --color-accent-hover: #d99b7c;
+    --color-accent-light: #f8e3d6;
+    --color-accent-green: #bcd7c0;
+    --color-text-main: #47372a;
+    --color-text-secondary: #7d6e65;
+    --color-text-blue: #7ecbe7; /* ???? ????? ???????? ????????? */
+    --color-text-header: #b97a68;
+    --color-text-paragraph: #7d6e65;
+    --color-shadow: rgba(234,184,154,0.07);
+    --color-shadow-dark: rgba(234,184,154,0.12);
+    --color-shadow-blue: rgba(126,203,231,0.07);
+    --color-shadow-blue-dark: rgba(126,203,231,0.10);
+}
+
+/* ?????? ????? */
 body {
-    background: linear-gradient(120deg, #e3f0ec 0%, #1eadcd 60%, #181818 100%);
-    color: #222;
+    background: linear-gradient(120deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-mid) 60%, var(--color-bg-gradient-end) 100%);
+    color: var(--color-text-main);
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
     margin: 0;
@@ -11,9 +31,9 @@ body {
 /* Sidebar */
 .sidebar {
     width: 100px;
-    background: #fff;
+    background: var(--color-bg-white);
     border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(30,173,205,0.10);
+    box-shadow: 0 8px 32px var(--color-shadow);
     padding: 32px 24px;
     display: flex;
     flex-direction: column;
@@ -27,8 +47,8 @@ body {
 }
 
 .menu-btn {
-    background: #29b8d5;
-    color: #fff;
+    background: var(--color-accent);
+    color: var(--color-bg-white);
     border: none;
     border-radius: 16px;
     width: 64px;
@@ -38,7 +58,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: background 0.2s;
-    box-shadow: 0 2px 8px rgba(30,173,205,0.10);
+    box-shadow: 0 2px 8px var(--color-shadow);
     position: absolute;
     top: 16px;
     right: 16px;
@@ -65,7 +85,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #222;
+    color: var(--color-text-main);
     text-decoration: none;
     font-size: 1.15rem;
     padding: 18px 0 10px 0;
@@ -94,25 +114,25 @@ body {
 .sidebar nav ul li a.active,
 .sidebar nav ul li a:hover,
 .sidebar nav ul li a:focus {
-    background: #e3f7fa;
-    color: #29b8d5;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
     font-weight: 500;
-    box-shadow: 0 2px 12px rgba(30,173,205,0.08);
+    box-shadow: 0 2px 12px var(--color-shadow-dark);
 }
 
 .sidebar nav ul li a.active i,
 .sidebar nav ul li a:hover i,
 .sidebar nav ul li a:focus i {
-    color: #29b8d5;
+    color: var(--color-accent);
 }
 
 .sidebar nav ul li a.active span,
 .sidebar nav ul li a:hover span,
 .sidebar nav ul li a:focus span {
-    color: #29b8d5;
+    color: var(--color-accent);
 }
 
-/* Основний контейнер */
+/* ???????? ????????? */
 .main-content {
     margin-left: 120px;
     padding: 32px 24px 32px 0;
@@ -125,11 +145,11 @@ body {
     box-sizing: border-box;
 }
 
-/* Секція профілю */
+/* ?????? ??????? */
 .profile {
-    background: #fff;
+    background: var(--color-bg-white);
     border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 24px var(--color-shadow-dark);
     padding: 40px 32px 32px 32px;
     min-width: 320px;
     max-width: 400px;
@@ -155,19 +175,19 @@ body {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 8px;
-    color: #181818;
+    /* color: var(--color-accent-hover); */
 }
 
 .profile .profession {
     font-size: 1.15rem;
-    color: #29b8d5;
+    color: var(--color-accent);
     margin-bottom: 18px;
     font-weight: 500;
 }
 
 .profile .description {
     font-size: 1.08rem;
-    color: #444;
+    color: var(--color-text-secondary);
     margin-bottom: 24px;
     line-height: 1.6;
 }
@@ -180,12 +200,12 @@ body {
 }
 
 .profile .socials a {
-    color: #29b8d5;
+    color: var(--color-accent-hover);
     font-size: 1.4rem;
     transition: color 0.2s;
 }
 .profile .socials a:hover {
-    color: #1eadcd;
+    color: var(--color-accent-green);
 }
 
 .profile-actions {
@@ -211,23 +231,23 @@ body {
 }
 
 .btn-main {
-    background: #29b8d5;
-    color: #fff;
+    background: var(--color-accent);
+    color: var(--color-bg-white);
     border: none;
 }
 .btn-main:hover {
-    background: #1eadcd;
+    background: var(--color-accent-hover);
 }
 
 .btn-outline {
-    background: #fff;
-    color: #29b8d5;
-    border: 2px solid #29b8d5;
+    background: var(--color-bg-white);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
 }
 .btn-outline:hover {
-    background: #e3f7fa;
-    color: #1eadcd;
-    border-color: #1eadcd;
+    background: var(--color-accent-light);
+    color: var(--color-accent-green);
+    border-color: var(--color-accent-green);
 }
 
 /* Секції-контент */
@@ -238,9 +258,9 @@ body {
 .contacts,
 .about.section-tab {
     flex: 1 1 0;
-    background: #fff;
+    background: var(--color-bg-white);
     border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 24px var(--color-shadow-dark);
     padding: 40px 32px 32px 32px;
     min-width: 0;
     display: flex;
@@ -256,7 +276,7 @@ body {
 .contacts h2 {
     font-size: 1.5rem;
     margin-bottom: 18px;
-    color: #222;
+    color: var(--color-text-header);
     font-weight: 700;
 }
 
@@ -266,7 +286,7 @@ body {
 .blog p,
 .contacts p {
     font-size: 1.1rem;
-    color: #444;
+    color: var(--color-text-paragraph);
     margin-bottom: 18px;
     line-height: 1.6;
 }
@@ -279,12 +299,12 @@ body {
 
 .about.section-tab ul li {
     font-size: 1.05rem;
-    color: #29b8d5;
+    color: var(--color-accent-hover);
     margin-bottom: 8px;
     line-height: 1.5;
 }
 
-/* --- Адаптивність: мобільні 320-768px --- */
+/* --- ???????? ????????? --- */
 @media (max-width: 768px) {
     body {
         flex-direction: column;
@@ -337,7 +357,7 @@ body {
         position: fixed;
         top: 20px;
         right: 20px;
-        background: #29b8d5;
+        background: var(--color-accent);
         box-shadow: 0 2px 8px rgba(30,173,205,0.13);
         z-index: 200;
         margin: 0;
